@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Student List
+{% endblock title %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid py-2">
+    <div class="container-fluid">
+        <h1 class="display-3 pl-2">Student</h1>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        {% for student in students %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                <img src="{{student.image_url}}" class="card-img-top" style="height:214px">
+                <div class="card-body">
+                    <div class="row">
+                        <h5 class="col-6">{{student.name}}</h5>
+                        <h6 class="col-6 text-right"> {{student.stud_class}}</h6>
+                    </div>
+                    <p class="card-text"> {{student.department}}</p>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+</div>
+{% endblock content %}
